@@ -2,11 +2,11 @@
 
 
 export default function Home(){
-    const loggedUser = localStorage.getItem("aa")
+    const loggedUser = sessionStorage.getItem("jack22@mail.gn")
 
     return (
         <>
-            <h1>Home page</h1>
+            <h1>Home page {loggedUser.username}</h1>
         </>
     )
 }

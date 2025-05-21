@@ -18,7 +18,7 @@ export default function SigninForm(){
         [e.target.name]: e.target.value
       })
     }
-    
+
 
     const handleSubmit = (e)=>{
       e.preventDefault();
@@ -29,6 +29,7 @@ export default function SigninForm(){
         
       }
       else {
+        sessionStorage.setItem(`${user.email}`, JSON.parse(userData) )
         navigate("/")
         return;
       }
