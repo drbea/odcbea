@@ -1,0 +1,11 @@
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+
+}
+
+.menu ul li {
+    list-style: none;
+    margin: 20px;
+}

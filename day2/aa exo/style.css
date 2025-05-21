@@ -1,0 +1,140 @@
+.container {
+    margin: 0;
+    margin-bottom: 50px;
+
+}
+
+.tete {
+    display: flex;
+    width: 100vw;
+}
+
+.tete-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.img-tete {
+    width: 100%;
+    /* height: auto; */
+    object-fit: cover;
+    
+    /* top: 0; */
+}
+
+.reserver-ens {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    /* top: 0; */
+    /* bottom: 0; */
+    width: 100%;
+    height: 100%;
+
+}
+
+.reserver-ens p {
+    font-size: 80px;
+    /* width: 900px; */
+    width: 15em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-reserver {
+    background-color: #3e83ea;
+    color: #fff;
+    font-size: larger;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #3e83ea50;
+
+}
+
+/* DESTination  */
+.milieu h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+    
+}
+.destination {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 30px;
+}
+
+.dest-group div p {
+    margin: 50px;
+    text-align: center;
+}
+.dest-group img {
+    border-radius: 10px 10px 0 0 ;
+    width: 90%;
+    height: 300px;
+}
+.dest-group {
+    width: 100%;
+    text-align: center;
+    
+}
+
+/* Anout contact */
+.about {
+    top: 0;
+}
+.about-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly ;
+    /* align-items: center; */
+    margin: 0 auto;
+    
+}
+form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    background-color: #00000015;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    margin: 5px ;
+    min-width: 500px;
+    padding: 20px ;
+
+} 
+
+form button {
+    width: 100px;
+    height: 40px;
+    font-weight: bolder;
+    font-size: large;
+    color: #fff;
+    background-color: #3e83ea;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0;
+}
+
+.send-btn {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0;
+    padding: 0;
+}

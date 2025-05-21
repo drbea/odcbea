@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.home {
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    /* height: 100%; */
+}
+
+.quick-access {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: blueviolet; */
+        display: flex;
+        /* flex-direction: row; */
+        justify-content: center;
+        align-items: center;
+}
+.home img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+ 
+}
+
+.btn-reserver-voyage, .btn-reserver-taxi{
+    width: 250px;
+    height: 60px;
+    border: 1px solid #00000050;
+    border-radius: 5px;
+    color: #FFF;
+    margin: 10px 10PX;
+    font-weight: bold;
+    font-size: 20px;
+} 
+
+.btn-reserver-voyage {
+    background-color: #2f2fe0;
+}
+
+.btn-reserver-taxi {
+    background-color: #ff7b00;
+
+}
+
+
+
+.form-class {
+    width: 100%;
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-size: 13px;
+    color: #00000090;
+}
+.form-group input, .form-group select, .form-group textarea {
+    min-width: 100px;
+    max-width: 100%;
+
+    min-height: 40px;
+    border: 1px solid #00000020;
+
+    background-color: #00000010;
+
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.btn-radio {
+    background-color: #ff7b00;
+}
+.btn-submit {
+    color: #000000;
+    height: 30px;
+}
