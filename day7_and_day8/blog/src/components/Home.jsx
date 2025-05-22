@@ -49,7 +49,7 @@ export default function Home(){
         } catch(validationError) {
             const errObject = {}
 
-            if (validationError instanceof Yup.validationError) {
+            if (validationError instanceof Yup.ValidationError) {
                 validationError.inner.forEach(err => {
                     if (!errObject[err.path]) {
                         console.log(err.errors)
