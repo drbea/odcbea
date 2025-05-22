@@ -29,13 +29,23 @@ export default function SigninForm(){
         
       }
       else {
-        sessionStorage.setItem(`${user.email}`, JSON.parse(userData) )
+        alert("user data: " + userData)
+          const savedUser = JSON.parse(userData);
+          if (savedUser.password !== user.password) {
+            alert("Mot de passe incorrect !");
+            return;
+          }
+        
+        const user_tosave = JSON.parse(userData)
+        sessionStorage.setItem("last_user", JSON.stringify(user_tosave))
         navigate("/")
-        return;
+        alert("Success")
+        setUserInfo(userInfo);
       }
-      
-      setUserInfo(userInfo);
     }
+    
+  
+
 
     return (
         <div className="auth-container">
@@ -43,7 +53,7 @@ export default function SigninForm(){
             <h2>Connexion</h2>
             <form action="/login" method="POST" className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="login-email">Adresse e-mail</label>
-                <input type="" id="login-email" name="email" onChange={handleUserChange}  value={user.email}/>
+                <input type="email" id="login-email" name="email" onChange={handleUserChange}  value={user.email}/>
 
                 <label htmlFor="login-password">Mot de passe</label>
                 <input type="password" id="login-password" name="password"  onChange={handleUserChange} value={user.password}/>

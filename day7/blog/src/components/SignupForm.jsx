@@ -28,16 +28,17 @@ export default function SignupForm(){
       if(user.password !== user.password1){
         alert("Les mots de pass ne sont pas identique")
       } else{
-      const newUser = {username:  `${user.username}`, email: `${user.email}`, password: `${user.password}`}
-      localStorage.setItem(`${user.email}`, JSON.stringify(newUser) )
-      alert("Success" + `${user.email}: ${user.password} `)
+      const newUser = {username:  user.username, email: user.email, password: user.password}}
+      localStorage.setItem(user.email, JSON.stringify(newUser) )
+      alert("Success " + `${user.email}: ${user.password} `)
       navigate("/signin")
-      return;}
+      setUserInfo(userInfo);
+
+      }
 
     }
     
-    setUserInfo(userInfo);
-  }
+  
 
     return (
         <div className="auth-container">
