@@ -3,7 +3,7 @@ import "./assets/Header.css"
 
 export default function Header(props){
     const last_user = sessionStorage.getItem("last_user")
-    const goto = useNavigate
+    const goto = useNavigate()
 
     const user = JSON.parse(last_user)
 
@@ -23,8 +23,9 @@ export default function Header(props){
 
             <div className="navlink">
 
-                {user ? ( <>@{user.email}
-                    <Link ><button onClick={deconnectUser} className="navlinkbtn" type="button">Deconnection</button></Link>
+                {user ? ( <>@{user.username}
+                    {/* <Link to="/home"></Link> */}
+                        <button onClick={deconnectUser} className="navlinkbtn" type="button">Deconnection</button>
                 
                 </> ): (
                 <>

@@ -29,7 +29,7 @@ export default function SigninForm(){
         
       }
       else {
-        alert("user data: " + userData)
+        // alert("user data: " + userData)
           const savedUser = JSON.parse(userData);
           if (savedUser.password !== user.password) {
             alert("Mot de passe incorrect !");
@@ -37,6 +37,7 @@ export default function SigninForm(){
           }
         
         const user_tosave = JSON.parse(userData)
+        sessionStorage.clear()
         sessionStorage.setItem("last_user", JSON.stringify(user_tosave))
         navigate("/")
         alert("Success")
@@ -44,6 +45,7 @@ export default function SigninForm(){
       }
     }
     
+  
   
 
 
