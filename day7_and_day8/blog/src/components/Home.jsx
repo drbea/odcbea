@@ -17,6 +17,7 @@ export default function Home(){
         const {name, value} = e.target
         const p = {...mail_data, [name]: value}
         setMail(p)
+        subscribe(e)
 
         // Supprimer l'erreur a chaque fois que le champ change
 /*        if(errors[name]){
@@ -32,13 +33,6 @@ export default function Home(){
                 .email("Enter a valid email")
     })
 
-    // schema.validate(data, {abortEarly: true})
-    // .then((valid) => {console.log(valid);
-    // }).catch((er) => {
-    //     er.inner.forEach(e => {
-    //         console.log(e.path, e.message);
-    //     })
-    // })
 
     const subscribe = async (e) => {
         e.preventDefault()
@@ -72,7 +66,7 @@ export default function Home(){
                 <h2>Inscrivez-vous à notre newsletter</h2>
                 <form onSubmit={subscribe} id="newsletter-form">
                     <span style={{backgroundColor: "red", fontSize: "0.9em" }}>{errors.email}</span>
-                    <input type="email" name="email" value={mail_data.email} onChange={handleMailChange} placeholder="Entrez votre e-mail" required/>
+                    <input type="email" name="email" value={mail_data.email} onChange={handleMailChange} placeholder="Entrez votre e-mail" />
                     <button type="submit">S'inscrire</button>
                 </form>
                 <div className="success-message" id="success-message">Merci pour votre inscription !</div>
