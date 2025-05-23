@@ -12,16 +12,16 @@ export default function Home(){
 
     const handleMailChange = function(e){
         // e.preventDefault();
-        console.log(`${e.target.name}: ${e.target.value} `)
+        //console.log(`${e.target.name}: ${e.target.value} `)
 
         const {name, value} = e.target
         const p = {...mail_data, [name]: value}
         setMail(p)
 
         // Supprimer l'erreur a chaque fois que le champ change
-        if(errors[name]){
+/*        if(errors[name]){
             setError({...errors, [name]: ""})
-        }
+        }*/
     }
 
 
@@ -44,21 +44,23 @@ export default function Home(){
         e.preventDefault()
 
         try {
-            await schema.validate(data, {abortEarly: false})
+            await schema.validate(mail_data, {abortEarly: false})
             setError({})
+            console.log("dans try: ✅ Email valide :", mail_data.email);
         } catch(validationError) {
             const errObject = {}
 
             if (validationError instanceof Yup.ValidationError) {
+                console.log("dans catch: ", validationError)
                 validationError.inner.forEach(err => {
                     if (!errObject[err.path]) {
-                        console.log(err.errors)
+                        console.log("dans if validationError: ", err.errors)
                         errObject[err.path] = err.errors.join("\n")
                     }
                 });
             }
 
-            setError({...errors, email: errors_tab});
+            setError(errObject);
         }
     }
 
@@ -69,8 +71,8 @@ export default function Home(){
             <div className="newsletter-container">
                 <h2>Inscrivez-vous à notre newsletter</h2>
                 <form onSubmit={subscribe} id="newsletter-form">
-                    <span>{errors.message}</span>
-                    <input type="" name="email" value={mail_data.email} onChange={handleMailChange} placeholder="Entrez votre e-mail" required/>
+                    <span style={{backgroundColor: "red", fontSize: "0.9em" }}>{errors.email}</span>
+                    <input type="email" name="email" value={mail_data.email} onChange={handleMailChange} placeholder="Entrez votre e-mail" required/>
                     <button type="submit">S'inscrire</button>
                 </form>
                 <div className="success-message" id="success-message">Merci pour votre inscription !</div>
