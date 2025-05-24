@@ -23,6 +23,12 @@ app.post("/api/data", (req, res) => {
     res.status(200).json({message: "donnees recu avec succees"});
 })
 
+app.post("/register", (req, res) => {
+    const data = req.body;
+    
+    console.log(data)
+})
+
 
 const PORT = 9100
 app.listen(PORT, () => console.log("API running on port: ", PORT))
