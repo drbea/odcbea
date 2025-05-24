@@ -11,7 +11,7 @@ function App() {
   <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path='/login' element={<UserForm />}></Route>
+        <Route path='/register' element={<UserForm />}></Route>
         <Route path='/navbar' element={<Navbar />}></Route>
         <Route path='/api/data' element={<SendDataToBackend />}></Route>
 
