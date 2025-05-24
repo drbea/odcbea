@@ -5,7 +5,7 @@ const cors = require("cors")
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:513"
+    origin: "http://localhost:5173"
 }))     // Autorise les requêtes depuis d'autres domaines (React)
 app.use(express.json())   // Permet de lire les JSON envoyés
 

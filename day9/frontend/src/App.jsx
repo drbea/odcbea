@@ -11,7 +11,22 @@ function App() {
       setFormData({...formData, [name]: value})
     }
 
+
     const urls = "http://localhost:9100/api/hello"
+    
+    const main = async (e) => {
+      const res = await fetch(urls, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+      const data = await res.json()
+      console.log(data)
+      
+    }
+
 
     useEffect(() => {
       fetch(urls)
@@ -32,7 +47,7 @@ function App() {
             <section className="login-section">
             <h2>Connexion</h2>
 
-            <form style={{display: "flex", flexDirection: "column"}} action="/login" method="POST" className="login-form">
+            <form onSubmit={main} style={{display: "flex", flexDirection: "column"}} action="/login" method="POST" className="login-form">
                 <label htmlFor="login-email">Adresse e-mail</label>
                 <input type="email" id="login-email" name="email" />
 
