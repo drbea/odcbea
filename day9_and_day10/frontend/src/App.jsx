@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+// import './App.css'
 
 function App() {
     const [msg, setMessage] = useState("")
@@ -47,12 +47,12 @@ function App() {
             <section className="login-section">
             <h2>Connexion</h2>
 
-            <form onSubmit={main} style={{display: "flex", flexDirection: "column"}} action="/login" method="POST" className="login-form">
+            <form onSubmit={main} style={{display: "flex", flexDirection: "column", width: "500px", margin: "0 auto" }} action="" method="POST" className="login-form">
                 <label htmlFor="login-email">Adresse e-mail</label>
-                <input type="email" id="login-email" name="email" />
+                <input type="email" id="login-email" name="email"  value={handleFormChange}/>
 
                 <label htmlFor="username">Nom</label>
-                <input type="text" id="username" name="username"  />
+                <input type="text" id="username" name="username" value={handleFormChange}  />
 
                 <button type="submit">Valider</button>
             </form>

@@ -14,6 +14,15 @@ app.get("/api/hello", (req, res) => {
     res.json(data)
 })
 
+app.post("/api/data", (req, res) => {
+    const formData = req.body;
+    console.log("\n\n")
+    console.log("données reçu du frontend:  " + formData);
+    console.log("\n\n")
+    console.log(req)
+    res.status(200).json({message: "donnees recu avec succees"});
+})
+
 
 const PORT = 9100
 app.listen(PORT, () => console.log("API running on port: ", PORT))
